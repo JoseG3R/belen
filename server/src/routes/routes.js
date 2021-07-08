@@ -1,11 +1,26 @@
-const express=require('express');
+const express = require('express');
 const routes=express.Router();
 
-routes.get('/', (req, res)=>{
+
+
+
+routes.post('/register', (req, res)=>{
+    req.getConnection((err, conn)=>{
+        if(err) return res.send(err);
+        //console.log(req.body);
+        conn.query('INSERT INTO `usuarios` set  ?',[req.body], (err,rows)=>{
+            if(err) return res.send(err);
+            res.json('El usuario ha sido registrado');
+        })
+    });
+});
+
+
+routes.get('/login', (req, res)=>{
     req.getConnection((err, conn)=>{
         if(err) return res.send(err);
         
-        conn.query('SELECT * FROM estudiantes', (err,rows)=>{
+        conn.query('SELECT * FROM usuarios WHERE username = ?',[req.body], (err,rows)=>{
             if(err) return res.send(err);
             res.json(rows);
         })
@@ -42,5 +57,8 @@ routes.delete('/:id',(req, res)=>{
         })
     })
 })
+
+
+
 
 module.exports=routes;

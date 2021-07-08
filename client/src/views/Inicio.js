@@ -1,9 +1,10 @@
 import React,{Fragment, useState, useEffect} from 'react';
-import Navbar from './components/Navbar';
-import ListaEstudiantes from './components/ListaEstudiantes';
-import Formulario from './components/Formulario';
+import Navbar from '../components/Navbar';
+import ListaEstudiantes from '../components/ListaEstudiantes';
+import Formulario from '../components/Formulario';
 
-function App() {
+
+function Inicio() {
 
   const [estudiante, setEstudiante] = useState({
     nombres: "",
@@ -27,7 +28,8 @@ useEffect(() => {
 
   return (
     <Fragment>
-      <Navbar brand="Estudiantes" />
+      <Navbar  brand="Estudiantes" />
+      <h3>Inicio</h3>
       <div className="container">
         <div className="row">
           <div className="col-10">
@@ -37,6 +39,7 @@ useEffect(() => {
           <div className="col-12">
             <h2 style={{textAlign: 'center'}} >Lista de estudiantes</h2>
             <ListaEstudiantes estudiante={estudiante} setEstudiante={setEstudiante} estudiantes={estudiantes} setListaActualizada={setListaActualizada} />
+            
           </div>
         </div>
       </div>
@@ -44,4 +47,4 @@ useEffect(() => {
   );
 }
 
-export default App;
+export default Inicio;
