@@ -19,10 +19,10 @@ class Navbar extends Component {
     }
 
     render() {
-        console.log(('id'+cookies.get('id')));
+        /* console.log(('id'+cookies.get('id')));
         console.log(('nombres: '+cookies.get('nombres')));
         console.log(('apellidos: '+cookies.get('apellidos')));
-        console.log(('username: '+cookies.get('username')));
+        console.log(('username: '+cookies.get('username'))); */
         return (
             <div>
         <nav className="navbar navbar-expand-lg navbar-dark bg-dark">

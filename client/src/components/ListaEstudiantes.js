@@ -10,10 +10,7 @@ const ListaEstudiantes = ({estudiante,setEstudiante,estudiantes, setListaActuali
         fetch('http://localhost:9000/api/' + id, requestInit)
             .then(res=>res.text())
             .then(res=>console.log(res))
-
-        
             setListaActualizada(true);
-
     }
 
     let{nombres, apellidos, ti, nacimiento}=estudiante;

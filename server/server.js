@@ -10,6 +10,7 @@ const cookieParser = require('cookie-parser');
 const session = require('express-session');
 
 
+
 const app = express();
 
 
@@ -28,7 +29,7 @@ app.use(myconn(mysql, dbOptions, 'single'));
 app.use(express.json());
 app.use(cors({
     origin:['http://localhost:3000'],
-    methods: ["GET","POST"],
+    methods: ["GET","POST","DELETE","PUT"],
     credentials: true
 }));
 

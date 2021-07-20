@@ -8,7 +8,6 @@ import Routes from './routes/Routes';
 ReactDOM.render(
   <React.StrictMode>
     <Routes />
-  {/*   <Login /> */}
   </React.StrictMode>,
   document.getElementById('root')
 );

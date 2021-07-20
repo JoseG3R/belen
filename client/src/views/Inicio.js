@@ -1,4 +1,4 @@
-import React,{Fragment, useState, useEffect} from 'react';
+import React,{useState, useEffect} from 'react';
 import Navbar from '../components/Navbar';
 import ListaEstudiantes from '../components/ListaEstudiantes';
 import Formulario from '../components/Formulario';
@@ -27,7 +27,7 @@ useEffect(() => {
 }, [listaActualizada])
 
   return (
-    <Fragment>
+    <>
       <Navbar  brand="Estudiantes" />
       <h3>Inicio</h3>
       <div className="container">
@@ -43,7 +43,7 @@ useEffect(() => {
           </div>
         </div>
       </div>
-    </Fragment>
+    </>
   );
 }
 

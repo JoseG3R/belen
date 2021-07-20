@@ -32,8 +32,8 @@ class Login extends Component {
 
 
     iniciarSesion=async()=>{
-        await axios.get(baseUrl, {params: {username: this.state.form.username, password: this.state.password 
-            /* md5(this.state.form.password) */}})
+        await axios.post(baseUrl,  {username: this.state.form.username, password: this.state.form.password 
+            /* md5(this.state.form.password) */})
         .then(response=>{
             return response.data;
         })
@@ -44,11 +44,9 @@ class Login extends Component {
                 cookies.set('nombres', respuesta.nombres, {path:"/"});
                 cookies.set('apellidos', respuesta.apellidos, {path:"/"});
                 cookies.set('username', respuesta.username, {path:"/"});
-                alert(`Bienvenido ${respuesta.nombres} ${respuesta.apellidos}`);
                 window.location.href="./Inicio";
             }else{
-                console.log('El usuario o la contraseña son incorrectos')
-                console.log(this.response);
+                alert('El usuario o la contraseña son incorrectos')
             }
         })
         .catch(error=>{
@@ -87,7 +85,7 @@ class Login extends Component {
                         <br />
                         <button className="btn btn-primary" onClick={()=>this.iniciarSesion()}>Iniciar sesión</button>
                     </div>
-                    <FormularioUsuarios />
+                    <a href="/Register">Registrar Usuario</a>
                 </div>
             </div>
         )
